@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ImportData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="object_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ImportDataResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="object_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExportDataResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportData_OfficeBox">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="object_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportData_OfficeBoxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExportData_OfficeBoxResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportDataSelection">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="object_id" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExportDataSelectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExportDataSelectionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="content" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="object_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadFileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="object_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportOnlyOrders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="object_id" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportOnlyOrdersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ImportOnlyOrdersResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadZipFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="content" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadZipFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadZipFileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Import_wf">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="object_id" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Import_wfResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Import_wfResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Import_wfs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="object_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Import_wfsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Import_wfsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Import_KUB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="object_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Import_KUBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Import_KUBResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Export_wf">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="object_id" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Export_wfResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Export_wfResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Export_wfs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="object_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Export_wfsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Export_wfsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IE_ImportOnlyOrders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="object_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IE_ImportOnlyOrdersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IE_ImportOnlyOrdersResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FromPPC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="content" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="object_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FromPPCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FromPPCResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ToPPC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="object_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ToPPCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ToPPCResult" type="tns:ArrayOfBase64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBase64Binary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="base64Binary" nillable="true" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExoprtToWorkFlow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pd1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pd2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="object_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExoprtToWorkFlowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExoprtToWorkFlowResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ImportDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportData" />
+  </wsdl:message>
+  <wsdl:message name="ImportDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportData" />
+  </wsdl:message>
+  <wsdl:message name="ExportDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportData_OfficeBoxSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportData_OfficeBox" />
+  </wsdl:message>
+  <wsdl:message name="ExportData_OfficeBoxSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportData_OfficeBoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportDataSelectionSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportDataSelection" />
+  </wsdl:message>
+  <wsdl:message name="ExportDataSelectionSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportDataSelectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadFile" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadFile" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportOnlyOrdersSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportOnlyOrders" />
+  </wsdl:message>
+  <wsdl:message name="ImportOnlyOrdersSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportOnlyOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadZipFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadZipFile" />
+  </wsdl:message>
+  <wsdl:message name="UploadZipFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadZipFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="Import_wfSoapIn">
+    <wsdl:part name="parameters" element="tns:Import_wf" />
+  </wsdl:message>
+  <wsdl:message name="Import_wfSoapOut">
+    <wsdl:part name="parameters" element="tns:Import_wfResponse" />
+  </wsdl:message>
+  <wsdl:message name="Import_wfsSoapIn">
+    <wsdl:part name="parameters" element="tns:Import_wfs" />
+  </wsdl:message>
+  <wsdl:message name="Import_wfsSoapOut">
+    <wsdl:part name="parameters" element="tns:Import_wfsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Import_KUBSoapIn">
+    <wsdl:part name="parameters" element="tns:Import_KUB" />
+  </wsdl:message>
+  <wsdl:message name="Import_KUBSoapOut">
+    <wsdl:part name="parameters" element="tns:Import_KUBResponse" />
+  </wsdl:message>
+  <wsdl:message name="Export_wfSoapIn">
+    <wsdl:part name="parameters" element="tns:Export_wf" />
+  </wsdl:message>
+  <wsdl:message name="Export_wfSoapOut">
+    <wsdl:part name="parameters" element="tns:Export_wfResponse" />
+  </wsdl:message>
+  <wsdl:message name="Export_wfsSoapIn">
+    <wsdl:part name="parameters" element="tns:Export_wfs" />
+  </wsdl:message>
+  <wsdl:message name="Export_wfsSoapOut">
+    <wsdl:part name="parameters" element="tns:Export_wfsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IE_ImportOnlyOrdersSoapIn">
+    <wsdl:part name="parameters" element="tns:IE_ImportOnlyOrders" />
+  </wsdl:message>
+  <wsdl:message name="IE_ImportOnlyOrdersSoapOut">
+    <wsdl:part name="parameters" element="tns:IE_ImportOnlyOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="FromPPCSoapIn">
+    <wsdl:part name="parameters" element="tns:FromPPC" />
+  </wsdl:message>
+  <wsdl:message name="FromPPCSoapOut">
+    <wsdl:part name="parameters" element="tns:FromPPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ToPPCSoapIn">
+    <wsdl:part name="parameters" element="tns:ToPPC" />
+  </wsdl:message>
+  <wsdl:message name="ToPPCSoapOut">
+    <wsdl:part name="parameters" element="tns:ToPPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExoprtToWorkFlowSoapIn">
+    <wsdl:part name="parameters" element="tns:ExoprtToWorkFlow" />
+  </wsdl:message>
+  <wsdl:message name="ExoprtToWorkFlowSoapOut">
+    <wsdl:part name="parameters" element="tns:ExoprtToWorkFlowResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="ImportData">
+      <wsdl:input message="tns:ImportDataSoapIn" />
+      <wsdl:output message="tns:ImportDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportData">
+      <wsdl:input message="tns:ExportDataSoapIn" />
+      <wsdl:output message="tns:ExportDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportData_OfficeBox">
+      <wsdl:input message="tns:ExportData_OfficeBoxSoapIn" />
+      <wsdl:output message="tns:ExportData_OfficeBoxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportDataSelection">
+      <wsdl:input message="tns:ExportDataSelectionSoapIn" />
+      <wsdl:output message="tns:ExportDataSelectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:input message="tns:UploadFileSoapIn" />
+      <wsdl:output message="tns:UploadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <wsdl:input message="tns:DownloadFileSoapIn" />
+      <wsdl:output message="tns:DownloadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportOnlyOrders">
+      <wsdl:input message="tns:ImportOnlyOrdersSoapIn" />
+      <wsdl:output message="tns:ImportOnlyOrdersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadZipFile">
+      <wsdl:input message="tns:UploadZipFileSoapIn" />
+      <wsdl:output message="tns:UploadZipFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Import_wf">
+      <wsdl:input message="tns:Import_wfSoapIn" />
+      <wsdl:output message="tns:Import_wfSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Import_wfs">
+      <wsdl:input message="tns:Import_wfsSoapIn" />
+      <wsdl:output message="tns:Import_wfsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Import_KUB">
+      <wsdl:input message="tns:Import_KUBSoapIn" />
+      <wsdl:output message="tns:Import_KUBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Export_wf">
+      <wsdl:input message="tns:Export_wfSoapIn" />
+      <wsdl:output message="tns:Export_wfSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Export_wfs">
+      <wsdl:input message="tns:Export_wfsSoapIn" />
+      <wsdl:output message="tns:Export_wfsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IE_ImportOnlyOrders">
+      <wsdl:input message="tns:IE_ImportOnlyOrdersSoapIn" />
+      <wsdl:output message="tns:IE_ImportOnlyOrdersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FromPPC">
+      <wsdl:input message="tns:FromPPCSoapIn" />
+      <wsdl:output message="tns:FromPPCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ToPPC">
+      <wsdl:input message="tns:ToPPCSoapIn" />
+      <wsdl:output message="tns:ToPPCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExoprtToWorkFlow">
+      <wsdl:input message="tns:ExoprtToWorkFlowSoapIn" />
+      <wsdl:output message="tns:ExoprtToWorkFlowSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ImportData">
+      <soap:operation soapAction="http://tempuri.org/ImportData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportData">
+      <soap:operation soapAction="http://tempuri.org/ExportData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportData_OfficeBox">
+      <soap:operation soapAction="http://tempuri.org/ExportData_OfficeBox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportDataSelection">
+      <soap:operation soapAction="http://tempuri.org/ExportDataSelection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://tempuri.org/UploadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <soap:operation soapAction="http://tempuri.org/DownloadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportOnlyOrders">
+      <soap:operation soapAction="http://tempuri.org/ImportOnlyOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadZipFile">
+      <soap:operation soapAction="http://tempuri.org/UploadZipFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Import_wf">
+      <soap:operation soapAction="http://tempuri.org/Import_wf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Import_wfs">
+      <soap:operation soapAction="http://tempuri.org/Import_wfs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Import_KUB">
+      <soap:operation soapAction="http://tempuri.org/Import_KUB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Export_wf">
+      <soap:operation soapAction="http://tempuri.org/Export_wf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Export_wfs">
+      <soap:operation soapAction="http://tempuri.org/Export_wfs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IE_ImportOnlyOrders">
+      <soap:operation soapAction="http://tempuri.org/IE_ImportOnlyOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FromPPC">
+      <soap:operation soapAction="http://tempuri.org/FromPPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToPPC">
+      <soap:operation soapAction="http://tempuri.org/ToPPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExoprtToWorkFlow">
+      <soap:operation soapAction="http://tempuri.org/ExoprtToWorkFlow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ImportData">
+      <soap12:operation soapAction="http://tempuri.org/ImportData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportData">
+      <soap12:operation soapAction="http://tempuri.org/ExportData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportData_OfficeBox">
+      <soap12:operation soapAction="http://tempuri.org/ExportData_OfficeBox" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportDataSelection">
+      <soap12:operation soapAction="http://tempuri.org/ExportDataSelection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap12:operation soapAction="http://tempuri.org/UploadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <soap12:operation soapAction="http://tempuri.org/DownloadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportOnlyOrders">
+      <soap12:operation soapAction="http://tempuri.org/ImportOnlyOrders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadZipFile">
+      <soap12:operation soapAction="http://tempuri.org/UploadZipFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Import_wf">
+      <soap12:operation soapAction="http://tempuri.org/Import_wf" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Import_wfs">
+      <soap12:operation soapAction="http://tempuri.org/Import_wfs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Import_KUB">
+      <soap12:operation soapAction="http://tempuri.org/Import_KUB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Export_wf">
+      <soap12:operation soapAction="http://tempuri.org/Export_wf" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Export_wfs">
+      <soap12:operation soapAction="http://tempuri.org/Export_wfs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IE_ImportOnlyOrders">
+      <soap12:operation soapAction="http://tempuri.org/IE_ImportOnlyOrders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FromPPC">
+      <soap12:operation soapAction="http://tempuri.org/FromPPC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToPPC">
+      <soap12:operation soapAction="http://tempuri.org/ToPPC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExoprtToWorkFlow">
+      <soap12:operation soapAction="http://tempuri.org/ExoprtToWorkFlow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://192.168.0.10:77/mobilesell/mobilesell.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://192.168.0.10:77/mobilesell/mobilesell.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

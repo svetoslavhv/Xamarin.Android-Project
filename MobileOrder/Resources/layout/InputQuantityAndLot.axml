@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:weightSum="100">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:layout_weight="13"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:layout_weight="75"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+			android:padding="4dp"
+            android:id="@+id/articleName" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="25"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="КОЛ."
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:layout_weight="25"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_gravity="center_horizontal"
+                android:hint="0.000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+				android:inputType="numberDecimal"
+                android:id="@+id/quantityEditText" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:weightSum="100"
+        android:layout_weight="10"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/linearLayout1">
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_weight="25"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2">
+            <TextView
+                android:text="Цена"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/articlePriceTextView" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_weight="25"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2">
+            <TextView
+                android:text="%"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2" />
+            <EditText
+                android:hint="0.00"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+				android:inputType="numberDecimal"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/discountEditText" />
+        </LinearLayout>
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:background="@drawable/border"
+            android:layout_weight="25"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/articlePriceAfterDiscountTextView" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:background="@drawable/border"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="25"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/totalPriceTextView" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#FFFFFF"
+            android:text="Партида"
+            android:layout_weight="50"
+            android:id="@+id/lotNameExpireDate" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#FFFFFF"
+            android:text="КОЛ."
+            android:layout_weight="25"
+            android:id="@+id/lotQuantity" />
+        <Space
+            android:layout_weight="25"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/lotRadioButton" />
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_weight="67"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/lotRecyclerView" />
+    <Button
+        android:text="Избери"
+        android:layout_weight="10"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/btnSelect" />
+</LinearLayout>

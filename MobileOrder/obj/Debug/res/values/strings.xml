@@ -1,0 +1,1 @@
+<resources><string name="app_name">MobileOrder</string><string-array name="printer_type"><item>Datecs</item><item>Tremol</item></string-array><color name="disabled_color">#FFFFFF</color><color name="enabled_color">#FFFFFF</color></resources>

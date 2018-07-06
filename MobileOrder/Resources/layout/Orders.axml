@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:weightSum="21"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_weight="5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="10">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_weight="6"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="3dp"
+                android:background="@drawable/border"
+                android:id="@+id/textViewCustomerName" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                android:id="@+id/textViewCustomerId" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_weight="4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        <!--android:padding="5dp"-->
+            <Button
+                android:text="Клиент"
+                android:textSize="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnSelectCustomer" />
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:background="@drawable/border"
+                android:gravity="right"
+                android:padding="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewOrderNumber" />
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:background="@drawable/border"
+                android:gravity="right"
+                android:padding="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewOrderDateAndHour" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_weight="1.5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/linearLayout1">
+        <Button
+            android:text="Изпращане"
+            android:textSize="10dp"
+            android:layout_weight="4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button2" />
+        <CheckBox
+            android:layout_weight="1"
+            android:checked="true"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox1" />
+        <Button
+            android:layout_weight="5"
+            android:textSize="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnDatePicker" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="horizontal"
+        android:weightSum="12">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:text="Артикул"
+            android:layout_weight="5" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:text="Цена"
+            android:layout_weight="2" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:text="Количество"
+            android:layout_weight="3" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:text="Сума"
+            android:layout_weight="2" />
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/orderArticlesRecyclerView"
+        android:scrollbars="vertical"
+        android:layout_weight="10"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_weight="4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/linearLayout2">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:weightSum="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout3">
+            <Button
+                android:text="&lt;&lt;&lt;"
+                android:textSize="10dp"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btnLeftArrow" />
+            <Button
+                android:text="&gt;&gt;&gt;"
+                android:textSize="10dp"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btnRightArrow" />
+            <RelativeLayout
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:background="@drawable/border"
+                android:gravity="center_vertical"
+                android:layout_weight="6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout3">
+                <TextView
+                    android:text="Тотал:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:padding="3dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView2" />
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:padding="3dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/totalPriceAllArticlesTextView" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:weightSum="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout4">
+            <Button
+                android:text="Бон"
+                android:textSize="10dp"
+                android:layout_weight="2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/btnBon" />
+            <Button
+                android:text="Фактура"
+                android:textSize="10dp"
+                android:layout_weight="2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/btnInvoice" />
+            <Button
+                android:text="Нова"
+                android:textSize="10dp"
+                android:layout_weight="2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/btnNewOrder" />
+            <Button
+                android:text="Край"
+                android:textSize="10dp"
+                android:layout_weight="2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/btnSaveOrder" />
+            <Button
+                android:text="Нов ред"
+                android:textSize="10dp"
+                android:layout_weight="2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/btnNewRow" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

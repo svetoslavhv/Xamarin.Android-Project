@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="MobileOrder.MobileOrder" android:versionCode="1" android:versionName="1.0">
+  <!--suppress UsesMinSdkAttributes-->
+  <uses-sdk android:minSdkVersion="21" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+  <supports-screens android:smallScreens="false" />
+  <application android:allowBackup="true" android:label="@string/app_name" android:name="android.app.Application">
+    <activity android:label="AboutProgramActivity" android:name="md5019e736f58fb65198e8dbfd62ab1258c.AboutProgramActivity" />
+    <activity android:label="CustomersActivity" android:name="md5019e736f58fb65198e8dbfd62ab1258c.CustomersActivity" />
+    <activity android:label="MobileOrder for Android ver 1.0" android:theme="@style/Theme.AppCompat" android:name="md5019e736f58fb65198e8dbfd62ab1258c.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:label="OrdersActivity" android:name="md5019e736f58fb65198e8dbfd62ab1258c.OrdersActivity" />
+    <activity android:label="ReportsActivity" android:name="md5019e736f58fb65198e8dbfd62ab1258c.ReportsActivity" />
+    <activity android:label="RoutesActivity" android:name="md5019e736f58fb65198e8dbfd62ab1258c.RoutesActivity" />
+    <activity android:label="Settings" android:name="md5019e736f58fb65198e8dbfd62ab1258c.SettingsActivity" />
+    <activity android:label="StocksActivity" android:name="md5019e736f58fb65198e8dbfd62ab1258c.StocksActivity" />
+    <activity android:label="SynchronizationActivity" android:name="md5019e736f58fb65198e8dbfd62ab1258c.SynchronizationActivity" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="MobileOrder.MobileOrder.mono.MonoRuntimeProvider.__mono_init__" />
+    <meta-data android:name="android.arch.lifecycle.VERSION" android:value="27.0.0-SNAPSHOT" />
+    <meta-data android:name="android.support.VERSION" android:value="26.1.0" />
+  </application>
+</manifest>

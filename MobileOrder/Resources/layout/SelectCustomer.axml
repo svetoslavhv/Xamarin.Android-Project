@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <SearchView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:background="@drawable/rounded_border"
+        android:clickable="true"
+        android:iconifiedByDefault="false"
+        android:focusable="false"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/searchViewCustomers" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/customersRecyclerView"
+        android:scrollbars="vertical"
+        android:layout_weight="8"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+    <Button
+        android:text="Нов"
+		android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/button1" />
+</LinearLayout>

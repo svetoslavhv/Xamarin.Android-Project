@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TableLayout
+        android:weightSum="10"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/parentLayout">
+    <!--Header-->
+        <TableRow
+            style="@style/HeaderRowStyle">
+            <TextView
+                android:text="Sales"
+                style="@style/HeaderStyle" />
+        </TableRow>
+    <!--Fields-->
+		<TableRow>
+			<TextView
+                android:text="Кратки данни за клиент ?"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"
+                style="@style/TextViewStyle" />
+			<Switch
+                android:layout_gravity="center"
+                android:id="@+id/connected" />
+		</TableRow>
+        <TableRow>
+            <TextView
+                android:text="Забрана за редактиране на отстъпки в клиенти?"
+                style="@style/TextViewStyle" />
+            <Switch
+                android:layout_gravity="center"
+                android:id="@+id/connected" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Подробно заглавие на разписка ?"
+                style="@style/TextViewStyle" />
+            <Switch
+                android:layout_gravity="center"
+                android:id="@+id/connected" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Продажба на минус ?"
+                style="@style/TextViewStyle" />
+            <Switch
+                android:layout_gravity="center"
+                android:id="@+id/connected" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Само цяло плащане ?"
+                style="@style/TextViewStyle" />
+            <Switch
+                android:layout_gravity="center"
+                android:id="@+id/connected" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Промяна на цени и отстъпки при продажба?"
+                style="@style/TextViewStyle" />
+            <Switch
+                android:layout_gravity="center"
+                android:id="@+id/connected" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent">
+            <TextView
+                android:text="Забрана за трансфери ?"
+                style="@style/TextViewStyle" />
+            <Switch
+                android:layout_gravity="center"
+                android:id="@+id/connected" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content">
+            <TextView
+                android:text="Забрана за фактура без плащане ?"
+                style="@style/TextViewStyle" />
+            <Switch
+                android:layout_gravity="center"
+                android:id="@+id/connected" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Защита на данни при синхронизация ?"
+                style="@style/TextViewStyle" />
+            <Switch
+                android:layout_gravity="center"
+                android:id="@+id/connected" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Търговски представител ID:"
+                style="@style/TextViewStyle" />
+            <EditText
+                style="@style/EditTextStyle"
+                android:id="@+id/soapServiceAddress" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Търговски представител:"
+                style="@style/TextViewStyle" />
+            <EditText
+                style="@style/EditTextStyle"
+                android:id="@+id/soapServiceAddress" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Брой знаци след десетичната точка:"
+                style="@style/TextViewStyle" />
+            <EditText
+                style="@style/EditTextStyle"
+                android:id="@+id/soapServiceAddress" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Брой дни отложено плащане:"
+                style="@style/TextViewStyle" />
+            <EditText
+                style="@style/EditTextStyle"
+                android:id="@+id/soapServiceAddress" />
+        </TableRow>
+    <!--Header-->
+        <TableRow
+            style="@style/HeaderRowStyle">
+            <TextView
+                android:text="Synchronization"
+                style="@style/HeaderStyle" />
+        </TableRow>
+    <!--Fields-->
+        <TableRow>
+            <TextView
+                android:text="SOAP синхронизация ?"
+                android:layout_gravity="center_vertical"
+                style="@style/TextViewStyle" />
+            <Switch
+                android:layout_gravity="center"
+                android:id="@+id/connected" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="ID на обекта за синхронизация?"
+                style="@style/TextViewStyle" />
+            <EditText
+                style="@style/EditTextStyle"
+                android:id="@+id/soapServiceAddress" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Потребителско име:"
+                style="@style/TextViewStyle" />
+            <EditText
+                style="@style/EditTextStyle"
+                android:id="@+id/soapServiceAddress" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Парола:"
+                style="@style/TextViewStyle" />
+            <EditText
+                style="@style/EditTextStyle"
+                android:id="@+id/soapServiceAddress" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="URL  на SOAP - LAN"
+                style="@style/TextViewStyle" />
+            <EditText
+                style="@style/EditTextStyle"
+                android:id="@+id/soapServiceAddress" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="URL на SOAP - WAN"
+                style="@style/TextViewStyle" />
+            <EditText
+                style="@style/EditTextStyle"
+                android:id="@+id/soapServiceAddress" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="IP адрес на FTP сървър в LAN"
+                style="@style/TextViewStyle" />
+            <EditText
+                style="@style/EditTextStyle"
+                android:id="@+id/soapServiceAddress" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="IP адрес на FTP сървър в WAN"
+                style="@style/TextViewStyle" />
+            <EditText
+                style="@style/EditTextStyle"
+                android:id="@+id/soapServiceAddress" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Пътека до папка за предаване на данни"
+                style="@style/TextViewStyle" />
+            <EditText
+                style="@style/EditTextStyle"
+                android:id="@+id/soapServiceAddress" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Пътека до папка за вземане на данни"
+                style="@style/TextViewStyle" />
+            <EditText
+                style="@style/EditTextStyle"
+                android:id="@+id/soapServiceAddress" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Автоматично повторно изпращане на поръчки ?"
+                android:layout_gravity="center_vertical"
+                style="@style/TextViewStyle" />
+            <Switch
+                android:layout_gravity="center"
+                android:id="@+id/connected" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Администраторска парола:"
+                style="@style/TextViewStyle" />
+            <EditText
+                style="@style/EditTextStyle"
+                android:id="@+id/soapServiceAddress" />
+        </TableRow>
+    <!--Header-->
+        <TableRow
+            style="@style/HeaderRowStyle">
+            <TextView
+                android:text="Printing"
+                style="@style/HeaderStyle" />
+        </TableRow>
+    <!---Fields-->
+        <TableRow>
+            <TextView
+                android:text="Използване на фискален принтер?"
+                android:layout_gravity="center_vertical"
+                style="@style/TextViewStyle" />
+            <Switch
+                android:layout_gravity="center"
+                android:id="@+id/connected" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Име на Ф.П./bluetooth/"
+                style="@style/TextViewStyle" />
+            <EditText
+                style="@style/EditTextStyle"
+                android:id="@+id/soapServiceAddress" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Тип на Ф.П."
+                style="@style/TextViewStyle" />
+            <EditText
+                style="@style/EditTextStyle"
+                android:id="@+id/soapServiceAddress" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Служебни бонове за разписка?"
+                android:layout_gravity="center_vertical"
+                style="@style/TextViewStyle" />
+            <Switch
+                android:layout_gravity="center"
+                android:id="@+id/connected" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Автоматично копие на фактура?"
+                android:layout_gravity="center_vertical"
+                style="@style/TextViewStyle" />
+            <Switch
+                android:layout_gravity="center"
+                android:id="@+id/connected" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Win1251 за Ф.П."
+                android:layout_gravity="center_vertical"
+                style="@style/TextViewStyle" />
+            <Switch
+                android:layout_gravity="center"
+                android:id="@+id/connected" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Име на НЕ Ф.П./bluetooth/"
+                style="@style/TextViewStyle" />
+            <EditText
+                style="@style/EditTextStyle"
+                android:id="@+id/soapServiceAddress" />
+        </TableRow>
+    <!--Fields-->
+    <!--Buttons-->
+    <!--<TableRow
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:text="Save"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnSave" />
+            <Button
+                android:text="Exit"
+                android:layout_marginRight="5dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnExit" />
+        </TableRow>-->
+    </TableLayout>
+</ScrollView>
